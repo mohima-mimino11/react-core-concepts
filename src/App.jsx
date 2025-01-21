@@ -3,13 +3,34 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo';
+import Actor from './Actor';
+import Singer from './Singer';
 
 function App() {
+  const actors = ['Brad Pitt', 'Angelina Jolie', 'Anne Hatheway', 'Kate Winslet', 'Emma Watson'];
+  const singers = [
+    {id:1, name: 'Taylor Swift', age: 34},
+    {id:2, name: 'Sabrina', age: 24},
+    {id:3, name: 'Girl in Red', age: 26},
+
+  ]
   return (
     <>
      
       <h3>Vite + React</h3>
-      <Todo 
+      {
+        singers.map(singer => <Singer singer={singer}></Singer>)
+      }
+
+
+
+
+      <Actor name={"Anya Taylor"}></Actor>
+      {
+        actors.map(actor => <Actor name={actor}></Actor>)
+      }
+      
+      {/* <Todo 
       task="Learn React" 
       isDone={false}>
       </Todo>
@@ -20,7 +41,7 @@ function App() {
       <Todo 
       task="Learn NextJs" 
       isDone={false}>
-      </Todo>
+      </Todo> */}
 
       {/* <Person></Person>
       <Device name="Laptop" price="55000" ></Device>
